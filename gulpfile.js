@@ -19,7 +19,7 @@
 
 	gulp.task( 'build-sass', function() {
 		gulp.src( SrcDir + '/sass/**/*.sass' )
-			.pipe( sass( { includePaths: require( 'node-normalize-scss' ).includePaths } ).on( 'error', sass.logError ) )
+			.pipe( sass().on( 'error', sass.logError ) )
 			.pipe( csscomb() )
 			.pipe( gulp.dest( BuildDir +'/css' ) )
 			.pipe( csso( { sourceMap: false } ) )
