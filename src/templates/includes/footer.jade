@@ -1,0 +1,23 @@
+div.footer
+    div.footer__footer-container.g-fixed-width.g-clearfix
+        div.footer__column.footer__column_column-type-1
+            - for(var i=0;i<5;i++) {
+                div
+                    a.footer__column-link(href="#") <span>Некоторая ссылка</span> 
+                        =i+1
+            - }
+
+        div.footer__column.footer__column_column-type-2
+            - for(var i=0;i<5;i++) {
+                div
+                    a.footer__column-link(href="#") <span>Некоторая ссылка</span> 
+                        =i+1
+            - }
+
+
+        div.footer__contacts.footer-contacts
+            span.footer-contacts__title Тел.: 
+            span.footer-contacts__value +7-913-294-12-12
+            br/
+            span.footer-contacts__title Адрес: 
+            span.footer-contacts__value г. Жопинск ул. Улетная 17

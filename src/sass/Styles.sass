@@ -1,0 +1,204 @@
+@import normalize
+
+@import fonts
+
+@import globals
+
+
+// SASS LANG FEATURES
+
+$font: Roboto, Arial
+
+@mixin trans( $time )
+    transition: all #{$time}s ease
+    -moz-transition: all #{$time}s ease
+    -webkit-transition: all #{$time}s ease
+
+// ///////////////////
+
+
+html
+    font-size: 16px
+    line-height: 1.3
+
+.main-container
+    overflow-x: hidden
+
+.main-container__header
+    height: 100px
+
+.header
+    position: relative
+    padding-left: 150px
+    padding-right: 250px
+    padding: 10px 0
+    background-color: #f3f3f3
+
+.header__logo-a
+    text-decoration: none
+        
+.header__logo-image
+    width: 120px
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+
+
+.header-navigator
+    list-style: none
+    margin: 20px 0 0 0
+    padding: 0
+
+.header-navigator__item
+    display: block
+    padding: 10px 20px
+    float: left
+    font-size: 1rem
+
+.header-navigator__item-a
+    text-decoration: none
+    font-family: 'Roboto'
+    font-weight: 300
+    color: #464646 
+    text-decoration: none
+    
+    &:hover
+        border-bottom: 1px solid
+
+
+.header-navigator__item-a_active
+    border-bottom: 1px solid
+    color: #000
+
+.header__contacts
+    width: 250px
+    display: block
+    position: absolute
+    right: 0
+    top: 0
+
+.contacts
+    padding-top: 30px
+    font-family: Roboto
+
+.contacts__title
+    font-size: 0.75rem
+
+.contacts__value
+    font-size: 1rem
+    font-weight: 700
+    
+
+.main-banner
+    height: 300px
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    background-image: url('../images/main-banner.jpg')
+
+
+.content__content-static-container
+    padding: 20px 0
+    font-family: Roboto
+    font-size: 0.875rem
+    line-height: 1.5
+    font-weight: 300
+
+
+.contacts-form
+    margin-bottom: 40px
+    padding: 30px
+    background: #EEE
+
+.contacts-form__field-wrapper
+    margin-bottom: 20px;
+
+.contacts-form__title
+    display: block
+    margin-bottom: 5px
+    font-family: $font
+    font-size: 0.875rem
+    font-weight: 300
+
+.contacts-form__title_important
+    font-weight: 700
+
+.contacts-form__title_important:after
+    content: '*'
+    
+.contacts-form__input
+    height: 30px
+    padding: 2px
+    font-size: 1rem
+    border: 1px solid #eee
+
+.contacts-form__input_long
+    width: 950px
+
+.contacts-form__submit-button
+    display: block
+    width: 200px
+    margin: 0 auto
+    padding: 10px 20px
+    background: #FFF
+    font-size: 1.375rem
+    font-family: $font
+    font-weight: bold
+    color: #4f4f4f
+    text-decoration: none
+    text-align: center
+    @include trans(.2)
+
+.contacts-form_widget__title
+    display: block
+    text-align: center
+    text-transform: uppercase
+    font-family: $font
+    color: #4f4f4f
+    font-size: 1.875rem
+
+
+.footer
+    background-color: #f3f3f3
+
+.footer__footer-container
+    position: relative
+    padding: 20px 0
+
+.footer__column
+    width: 200px
+    float: left 
+
+.footer__column_column-type-1
+    margin-right: 20px
+
+.footer__column-link
+    color: #aaa
+    font-family: $font
+    font-size: 0.75rem
+    text-decoration: none;
+    @include trans(.5)
+    &>span:hover
+        border-bottom: 1px solid
+    &:hover
+        padding-left: 10px
+    
+
+.footer-contacts
+    width: 300px
+    padding-top: 20px
+    position: absolute
+    top: 0
+    right: 0
+    z-index: 1
+
+
+.footer-contacts__title
+    font-size: 0.75rem
+
+.footer-contacts__value
+    font-size: 1rem
+    font-weight: 700
+
