@@ -1,5 +1,5 @@
 doctype html
-head
+head(lang="ru")
     title SOME MARKUP TEST
     // Minified styles
     // css/min/Styles.css
@@ -7,5 +7,44 @@ head
     link(rel="stylesheet" type="text/css" href="css/Styles.css")
 body
     div.main-container
-        div.main-container__header.header
-            h1.header__title Watsup beach
+
+        // HEADER BLOCK
+        include includes/header.jade
+        // ///
+
+
+        // MAIN BANNER
+        div.main-banner.g-fixed-width
+        // ///
+
+
+        // CONTENT
+        div.content
+            div.content__content-static-container.g-fixed-width
+                - for (var iterator = 0; iterator < 3; iterator++ ) {
+                p
+                    include includes/fishtext.jade
+                - }
+        // ///
+
+
+        // CONTACT FORM
+        div.contacts-form-widget.g-fixed-width
+            form.contacts-form_widget__form.contacts-form(method="POST" action="#")
+                span.contacts-form_widget__title Обратная связь
+                div.contacts-form__field-wrapper
+                    span.contacts-form__title.contacts-form__title_important Ваше имя
+                    input.contacts-form__input.contacts-form__input_long(type="text" name="" data-placehoder="Ваше имя" value="Ваше имя")
+                div.contacts-form__field-wrapper
+                    span.contacts-form__title Какое-нибудь не ваше имя
+                    input.contacts-form__input.contacts-form__input_long(type="text" name="" data-placehoder="Какое-нибудь не ваше имя" value="Какое-нибудь не ваше имя")
+
+                a.contacts-form__submit-button.js-submit-button(href="#") ОТПРАВИТЬ
+        // ///
+
+        // FOOTER BLOCK
+    
+        include includes/footer.jade
+
+        // ///
+        

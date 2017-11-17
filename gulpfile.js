@@ -36,11 +36,19 @@
 			.pipe( connect.reload() )
 	});
 
-	gulp.task( 'build', [ 'build-sass', 'build-jade' ] );
+    gulp.task( 'copy', function() {
+        gulp.src( SrcDir + '/images/**/*' )
+            .pipe( gulp.dest( BuildDir + '/images' ) )
+
+    });
+
+	gulp.task( 'build', [ 'build-sass', 'build-jade', 'copy' ] );
 
 	gulp.task( 'watch', function() {
 		gulp.watch( SrcDir + '/sass/**/*.sass', [ 'build-sass' ] );
-		gulp.watch( SrcDir + '/templates/*.jade', [ 'build-jade' ] );
+        gulp.watch( SrcDir + '/sass/**/*.scss', [ 'build-sass' ] );
+		gulp.watch( SrcDir + '/templates/**/*.jade', [ 'build-jade' ] );
+        gulp.watch( SrcDir + '/images/**/*', [ 'copy' ] );
 	});
 
 
